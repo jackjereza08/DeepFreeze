@@ -23,4 +23,24 @@ public class PlayerController : MonoBehaviour
 		Movement = new Vector2(MoveHorizontal,MoveVertical);
 		rigid.AddForce(Movement * speed);
 	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.gameObject.CompareTag("Speedboost"))
+		{
+			Destroy(other.gameObject);
+		}
+		else if(other.gameObject.CompareTag("Sheild"))
+		{
+			Destroy(other.gameObject);
+		}
+		else if(other.gameObject.CompareTag("Poisonware"))
+		{
+			Destroy(other.gameObject);
+		}
+		else if(other.gameObject.CompareTag("Evilbot"))
+		{
+			gameObject.SetActive(false);
+		}
+	}
 }

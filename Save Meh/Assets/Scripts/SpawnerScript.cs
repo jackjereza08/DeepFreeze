@@ -6,11 +6,13 @@ public class SpawnerScript : MonoBehaviour
 {
 
 	public GameObject enemy;
+	public GameObject[] pickups;
 	public Vector3 spawnValues;
 	public float spawnWait;
 	public float spawnLeastWait;
 	public float spawnMostWait;
 	public int startSpawnWait;
+	public int randomPickUps;
 	public bool stop;
 
 	// Use this for initialization
@@ -31,8 +33,11 @@ public class SpawnerScript : MonoBehaviour
 
 		while(!stop)
 		{
+			randomPickUps = Random.Range(0,3);
 			Vector3 spawnPos = new Vector3(Random.Range(-spawnValues.x,spawnValues.x),Random.Range(-spawnValues.y,spawnValues.y));
 			Instantiate(enemy,spawnPos,gameObject.transform.rotation);
+			Vector3 spawnPos1 = new Vector3(Random.Range(-spawnValues.x,spawnValues.x),Random.Range(-spawnValues.y,spawnValues.y));
+			Instantiate(pickups[randomPickUps],spawnPos1,gameObject.transform.rotation);
 			yield return new WaitForSeconds(spawnWait);
 		}
 	}
