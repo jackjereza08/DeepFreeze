@@ -53,10 +53,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerStatsScript.cs" />
      <Compile Include="Assets\Scripts\RotatorScript.cs" />
+     <Compile Include="Assets\Scripts\SceneScript.cs" />
      <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\SpawnerScript.cs" />
  <Reference Include="UnityEditor.StandardEvents">

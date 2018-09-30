@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreScript : MonoBehaviour {
 
@@ -30,6 +31,8 @@ public class ScoreScript : MonoBehaviour {
 		{
 			Debug.Log("GAME OVER");
 			GameOverText.text = "GAME OVER";
+			yield return new WaitForSeconds(3);
+			SceneManager.LoadScene(0);
 		}
 	}
 }
