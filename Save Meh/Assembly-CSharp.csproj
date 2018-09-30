@@ -53,8 +53,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatsScript.cs" />
      <Compile Include="Assets\Scripts\RotatorScript.cs" />
+     <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\SpawnerScript.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>F:/Unity Projects/IT4A-DeepFreeze/Save Meh/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
@@ -257,9 +260,6 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
- <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>F:/Unity Projects/IT4A-DeepFreeze/Save Meh/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/ASpire/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
  </Reference>
@@ -296,14 +296,6 @@
  <Reference Include="Boo.Lang">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{4A2542CC-E102-710B-F23C-64F241C5CD9D}</Project>      <Name>AstarPathfindingProject</Name>    </ProjectReference>
-    <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{B1AD65ED-8B18-B3C0-0792-7C9D8443A72B}</Project>      <Name>PackageToolsEditor</Name>    </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{0AAA25A8-DD70-84B3-9EF8-C245BFD5FE07}</Project>      <Name>AstarPathfindingProjectEditor</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

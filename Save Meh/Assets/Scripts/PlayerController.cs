@@ -18,29 +18,23 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate () 
 	{
-		MoveHorizontal = Input.GetAxisRaw("Horizontal");
-		MoveVertical = Input.GetAxisRaw("Vertical");
-		Movement = new Vector2(MoveHorizontal,MoveVertical);
-		rigid.AddForce(Movement * speed);
-	}
+		PlayerStatsScript stats = GetComponent<PlayerStatsScript>();
+		speed = stats.SpeedboostCount;
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.gameObject.CompareTag("Speedboost"))
+		//If the player picked up a poisonware the controll will reverse.
+		if(stats.PoisonwareCount != 0)	
 		{
-			Destroy(other.gameObject);
+			MoveHorizontal = Input.GetAxisRaw("Vertical");
+			MoveVertical = Input.GetAxisRaw("Horizontal");
+			Movement = new Vector2(MoveHorizontal,MoveVertical);
+			rigid.AddForce(Movement * speed);
 		}
-		else if(other.gameObject.CompareTag("Sheild"))
+		else
 		{
-			Destroy(other.gameObject);
-		}
-		else if(other.gameObject.CompareTag("Poisonware"))
-		{
-			Destroy(other.gameObject);
-		}
-		else if(other.gameObject.CompareTag("Evilbot"))
-		{
-			gameObject.SetActive(false);
+			MoveHorizontal = Input.GetAxisRaw("Horizontal");
+			MoveVertical = Input.GetAxisRaw("Vertical");
+			Movement = new Vector2(MoveHorizontal,MoveVertical);
+			rigid.AddForce(Movement * speed);
 		}
 	}
 }
